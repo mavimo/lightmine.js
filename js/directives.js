@@ -19,3 +19,14 @@ directives.directive('spinner', function () {
     }
   };
 });
+
+directives.directive('rmIssue', function () {
+  return {
+    scope: {
+      issue: "=issue"
+    },
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'partials/issue/view.html'
+  };
+});
