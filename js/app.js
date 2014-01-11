@@ -2,7 +2,7 @@
   'use strict';
 }());
 
-angular.module('LightmineApp', ['LightmineApp.controllers', 'LightmineApp.filters', 'LightmineApp.services', 'LightmineApp.directives'])
+angular.module('LightmineApp', ['LightmineApp.controllers', 'LightmineApp.filters', 'LightmineApp.services', 'LightmineApp.directives', 'angular-md5'])
   .config(['$httpProvider', '$routeProvider', '$locationProvider', function ($httpProvider, $routeProvider, $locationProvider) {
     $routeProvider.when('/login', {
       templateUrl : 'partials/login.html',
@@ -42,6 +42,11 @@ angular.module('LightmineApp', ['LightmineApp.controllers', 'LightmineApp.filter
     $routeProvider.when('/user/issues', {
       templateUrl : 'partials/user/issues.html',
       controller : 'UserIssuesController'
+    });
+
+    $routeProvider.when('/project/:id/kanban', {
+      templateUrl : 'partials/project/kanban.html',
+      controller : 'ProjectIssuesController'
     });
 
     $routeProvider.otherwise({

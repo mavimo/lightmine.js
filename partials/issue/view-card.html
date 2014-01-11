@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="dropdown pull-right">
+      <a class="link" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#!/issue/{{issue.id}}/edit"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Edit</a></li>
+        <li><a class="link" ng-click="deleteIssue(issue)"><i class="glyphicon glyphicon-trash"></i>&nbsp;&nbsp;Delete</a></li>
+      </ul>
+    </div>
+
+    <div class="panel-title">
+      <a href="#!/issue/{{issue.id}}/edit">{{issue.id}} - {{issue.subject}}</a>
+      <div>
+        <span class="badge">{{ issue.tracker.name }}</span>
+        <span class="badge">{{ issue.priority.name }}</span>
+        <span class="badge">{{ issue.category.name    }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div>{{ issue.description }}</div>
+    <div>{{ issue.assigned_to.id | userMail }}</div>
+    <div>{{ issue.author.id | userMail }}</div>
+    <img ng-src="http://www.gravatar.com/avatar/{{ issue.assigned_to.id | userMail }}?s=50" />
+    <img ng-src="http://www.gravatar.com/avatar/{{ issue.author.id | userMail }}?s=50" />
+    <!-- div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-6">{{ issue.assigned_to.name }}</div>
+      <div class="col-sm-6 col-md-4 col-lg-6">{{ issue.author.name      }}</div>
+    </div-->
+  </div>
+</div>

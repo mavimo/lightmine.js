@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h1>Kanban</h1>
+</div>
+<div spinner="issues" class="centered"></div>
+<div ng-repeat="col in issues.entries|unique:'status'" class="col-md-3">
+  <h2>{{ col.status.name }}</h2>
+  <div ng-repeat="issue in issues.entries|issueStatus:col.status.name">
+    <rm-issue-card issue="issue">
+  </div>
+</div>

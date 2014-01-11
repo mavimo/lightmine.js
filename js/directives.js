@@ -30,3 +30,14 @@ directives.directive('rmIssue', function () {
     templateUrl: 'partials/issue/view.html'
   };
 });
+
+directives.directive('rmIssueCard', function () {
+  return {
+    scope: {
+      issue: "=issue"
+    },
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'partials/issue/view-card.html'
+  };
+});
